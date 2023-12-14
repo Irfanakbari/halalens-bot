@@ -2,8 +2,10 @@ import vertexai
 from flask_socketio import send, SocketIO
 from vertexai.language_models import ChatModel, InputOutputTextPair
 from flask import Flask
+from flask_cors import CORS  # Import the CORS extension
 
 app = Flask(__name__)
+CORS(app)
 socketio = SocketIO(app)
 
 vertexai.init(project="sehatin-406505", location="us-central1")
