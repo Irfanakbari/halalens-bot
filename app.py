@@ -7,6 +7,7 @@ from flask_cors import CORS  # Import the CORS extension
 app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app)
+socketio.init_app(app, cors_allowed_origins="*")
 
 vertexai.init(project="sehatin-406505", location="us-central1")
 chat_model = ChatModel.from_pretrained("chat-bison")
